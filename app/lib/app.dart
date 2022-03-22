@@ -1,4 +1,4 @@
-import 'package:app/router.dart';
+import 'package:app/src/config/app_router.dart';
 import 'package:app/src/config/app_theme.dart';
 import 'package:flutter/material.dart';
 
@@ -10,8 +10,8 @@ class App extends StatelessWidget {
     return MaterialApp.router(
       title: 'Party App',
       theme: AppTheme.theme,
-      routeInformationParser: router.routeInformationParser,
-      routerDelegate: router.routerDelegate,
+      routeInformationParser: AppRouter.router.routeInformationParser,
+      routerDelegate: AppRouter.router.routerDelegate,
     );
   }
 }
