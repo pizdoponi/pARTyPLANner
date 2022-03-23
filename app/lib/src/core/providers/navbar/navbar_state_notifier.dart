@@ -1,17 +1,9 @@
-import 'dart:async';
-
-import 'package:app/src/config/app_animations.dart';
 import 'package:app/src/config/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'navbar_states.dart';
-
-final navbarStateProvider =
-    StateNotifierProvider<NavbarStateNotifier, NavbarState>(
-  (ref) => NavbarStateNotifier(HomeScreenActive(2)),
-);
 
 class NavbarStateNotifier extends StateNotifier<NavbarState> {
   NavbarStateNotifier(NavbarState state) : super(state);
@@ -31,17 +23,34 @@ class NavbarStateNotifier extends StateNotifier<NavbarState> {
       }
       // otherwise the user clicked on home button from some other tab
       else {
-        state = HomeScreenActive(index);
+        state = HomeScreenActive(
+          initialIndex: index,
+          controller: state.controller,
+        );
       }
     }
     // the user clicked on one of the side tabs
     else {
-      state = OtherScreenActive(index);
+      state = OtherScreenActive(
+        initialIndex: index,
+        controller: state.controller,
+      );
     }
-    // when the user clicks on a tab, the screen should change accordingly
-    // it must, however, wait for the navbar animation to finish
-    // after the animation is complete, display the new screen
-    Timer(AppAnimations.navbarOnTapDuration, () => context.go(route));
+  }
+
+  void onSwipe(int index) {
+    var route = _index2route(index);
+    if (route == AppRoutes.home) {
+      state = HomeScreenActive(
+        initialIndex: index,
+        controller: state.controller,
+      );
+    } else {
+      state = OtherScreenActive(
+        initialIndex: index,
+        controller: state.controller,
+      );
+    }
   }
 
   String _index2route(int index) {

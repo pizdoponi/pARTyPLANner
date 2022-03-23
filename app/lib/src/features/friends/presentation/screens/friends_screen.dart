@@ -1,11 +1,12 @@
-import 'package:app/src/core/widgets/base_screen.dart';
 import 'package:flutter/material.dart';
 
-class FriendsScreen extends BaseScreen {
-  FriendsScreen({Key? key}) : super(key: key);
+class FriendsScreen extends StatelessWidget {
+  const FriendsScreen({Key? key}) : super(key: key);
 
   @override
-  final appBar = AppBar(
-    title: Text("Friends Screen"),
-  );
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Friends Screen"),
+    );
+  }
 }

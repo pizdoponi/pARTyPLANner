@@ -1,11 +1,12 @@
-import 'package:app/src/core/widgets/base_screen.dart';
 import 'package:flutter/material.dart';
 
-class ArchiveScreen extends BaseScreen {
-  ArchiveScreen({Key? key}) : super(key: key);
+class ArchiveScreen extends StatelessWidget {
+  const ArchiveScreen({Key? key}) : super(key: key);
 
   @override
-  final appBar = AppBar(
-    title: const Text("Archive Screen"),
-  );
+  Widget build(BuildContext context) {
+    return const Center(
+      child: Text("Archive Screen"),
+    );
+  }
 }
