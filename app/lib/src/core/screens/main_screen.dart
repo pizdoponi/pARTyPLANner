@@ -39,7 +39,7 @@ class MainScreen extends ConsumerWidget {
               ref.read(navbarStateProvider.notifier).onSwipe(index);
             },
             // the children are the screens (tabs)
-            children: const [
+            children: [
               ArchiveScreen(),
               SearchScreen(),
               HomeScreen(),

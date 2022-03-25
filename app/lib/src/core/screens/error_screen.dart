@@ -9,12 +9,12 @@ class ErrorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Error Screen"),
+        title: const Text("An error occurred. Please don't cry."),
       ),
       body: SafeArea(
           child: Center(
         child: ElevatedButton(
-          child: const Text("Go Home"),
+          child: const Text("Go Home (you can cry there)"),
           onPressed: () {
             context.go(AppRoutes.home);
           },
