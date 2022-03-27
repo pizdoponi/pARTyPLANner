@@ -1,3 +1,4 @@
+import 'package:app/src/config/app_lang.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -8,9 +9,8 @@ class HomeScreen extends StatelessWidget {
     return Container(
       height: MediaQuery.of(context).size.height,
       width: MediaQuery.of(context).size.width,
-      color: Colors.red,
-      child: const Center(
-        child: Text("Home Screen"),
+      child: Center(
+        child: Text(AppLang.lang.homeScreen),
       ),
     );
   }
