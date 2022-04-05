@@ -5,8 +5,17 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import 'navbar_states.dart';
 
-class NavbarStateNotifier extends StateNotifier<NavbarState> {
-  NavbarStateNotifier(NavbarState state) : super(state);
+final navbarController = StateNotifierProvider<NavbarController, NavbarState>(
+  (ref) => NavbarController(
+    HomeScreenActive(
+      index: 2,
+      controller: PageController(initialPage: 2),
+    ),
+  ),
+);
+
+class NavbarController extends StateNotifier<NavbarState> {
+  NavbarController(NavbarState state) : super(state);
 
   void onTap({required int index, required BuildContext context}) {
     // get the route the user wants to navigate to
@@ -24,16 +33,16 @@ class NavbarStateNotifier extends StateNotifier<NavbarState> {
       // otherwise the user clicked on home button from some other tab
       else {
         state = HomeScreenActive(
-          initialIndex: index,
-          controller: state.controller,
+          index: index,
+          controller: state.pageController,
         );
       }
     }
     // the user clicked on one of the side tabs
     else {
       state = OtherScreenActive(
-        initialIndex: index,
-        controller: state.controller,
+        index: index,
+        controller: state.pageController,
       );
     }
   }
@@ -42,13 +51,13 @@ class NavbarStateNotifier extends StateNotifier<NavbarState> {
     var route = _index2route(index);
     if (route == AppRoutes.home) {
       state = HomeScreenActive(
-        initialIndex: index,
-        controller: state.controller,
+        index: index,
+        controller: state.pageController,
       );
     } else {
       state = OtherScreenActive(
-        initialIndex: index,
-        controller: state.controller,
+        index: index,
+        controller: state.pageController,
       );
     }
   }

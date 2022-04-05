@@ -6,7 +6,7 @@ import '../../features/friends/presentation/screens/friends_screen.dart';
 import '../../features/home/presentation/screens/home_screen.dart';
 import '../../features/profile/presentation/screens/profile_screen.dart';
 import '../../features/search/presentation/screens/search_screen.dart';
-import '../providers/navbar/navbar_providers.dart';
+import '../controllers/navbar/navbar_controller.dart';
 import '../widgets/navbar.dart';
 
 /// The collection of main screens.
@@ -26,7 +26,7 @@ class MainScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final controller = ref.watch(navbarStateProvider).controller;
+    final controller = ref.watch(navbarController).pageController;
     return Scaffold(
       body: Stack(
         children: [
@@ -36,7 +36,7 @@ class MainScreen extends ConsumerWidget {
             // notify the navbarStateProvider
             // so the navbar updates
             onPageChanged: (int index) {
-              ref.read(navbarStateProvider.notifier).onSwipe(index);
+              ref.read(navbarController.notifier).onSwipe(index);
             },
             // the children are the screens (tabs)
             children: const [

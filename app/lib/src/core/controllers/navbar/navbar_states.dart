@@ -4,10 +4,10 @@ import 'package:flutter/cupertino.dart';
 abstract class NavbarState {
   final List<Icon> icons;
   final int index;
-  final PageController controller;
+  final PageController pageController;
 
   NavbarState({
-    required this.controller,
+    required this.pageController,
     required this.icons,
     required this.index,
   });
@@ -15,7 +15,7 @@ abstract class NavbarState {
 
 class HomeScreenActive extends NavbarState {
   HomeScreenActive({
-    required int initialIndex,
+    required int index,
     required PageController controller,
   }) : super(
           icons: [
@@ -25,14 +25,14 @@ class HomeScreenActive extends NavbarState {
             AppIcons.friends,
             AppIcons.profile,
           ],
-          index: initialIndex,
-          controller: controller,
+          index: index,
+          pageController: controller,
         );
 }
 
 class OtherScreenActive extends NavbarState {
   OtherScreenActive({
-    required int initialIndex,
+    required int index,
     required PageController controller,
   }) : super(
           icons: [
@@ -42,7 +42,7 @@ class OtherScreenActive extends NavbarState {
             AppIcons.friends,
             AppIcons.profile,
           ],
-          index: initialIndex,
-          controller: controller,
+          index: index,
+          pageController: controller,
         );
 }
