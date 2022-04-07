@@ -1,6 +1,6 @@
 import 'package:app/src/core/entities/party.dart';
 import 'package:flutter/material.dart';
-/*
+
 class PartyTile extends StatelessWidget {
   const PartyTile({Key? key, required this.party, required this.color})
       : super(key: key);
@@ -21,23 +21,5 @@ class PartyTile extends StatelessWidget {
             style: const TextStyle(fontSize: 5, color: Colors.lime),
           ),
         ));
-  }
-}
-*/
-
-class PartyTile extends StatelessWidget {
-  PartyTile({Key? key, required this.party, required this.color})
-      : super(key: key);
-
-  final Party party;
-  final Color color;
-
-  Widget build(BuildContext context) {
-    return Container(
-      color: color,
-      width: 100,
-      height: 50,
-      child: Text(party.name + "\n" + party.time.toString()),
-    );
   }
 }

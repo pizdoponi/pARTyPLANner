@@ -11,4 +11,5 @@ class AppColors {
   static const Color background = Color(0xFF151519);
   static const Color navbar = Color(0xFF615C79);
   static const Color hostingParty = Colors.black;
+  static const Color neonText = Color(0xFFbc13fe);
 }
