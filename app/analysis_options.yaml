@@ -8,6 +8,9 @@
 # The following line activates a set of recommended lints for Flutter apps,
 # packages, and plugins designed to encourage good coding practices.
 include: package:flutter_lints/flutter.yaml
+# Enable very_good_analysis for stricter lint rules
+# include: package:very_good_analysis/analysis_options.yaml
+
 
 linter:
   # The lint rules applied to this project can be customized in the
@@ -39,3 +42,11 @@ linter:
 
 # Additional information about this file can be found at
 # https://dart.dev/guides/language/analysis-options
+
+# To prevent errors with code generation using build_runner
+analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
+  errors:
+    invalid_annotation_target: ignore

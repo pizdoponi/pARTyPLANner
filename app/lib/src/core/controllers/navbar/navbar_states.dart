@@ -1,48 +1,39 @@
-import 'package:app/src/config/app_icons.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:flutter/foundation.dart';
 
-abstract class NavbarState {
-  final List<Icon> icons;
-  final int index;
-  final PageController pageController;
+import '../../../config/app_icons.dart';
 
-  NavbarState({
-    required this.pageController,
-    required this.icons,
-    required this.index,
-  });
-}
+part 'navbar_states.freezed.dart';
 
-class HomeScreenActive extends NavbarState {
-  HomeScreenActive({
+@freezed
+class NavbarState with _$NavbarState {
+  @Assert("index == 2",
+      "When the HomeScreen is active, the middle tab should be selected")
+  const factory NavbarState.home({
+    @Default([
+      AppIcons.archive,
+      AppIcons.search,
+      AppIcons.add,
+      AppIcons.friends,
+      AppIcons.profile,
+    ])
+        List<Icon> icons,
+    @Default(2)
+        int index,
+    required PageController pageController,
+  }) = _Home;
+
+  const factory NavbarState.other({
+    @Default([
+      AppIcons.archive,
+      AppIcons.search,
+      AppIcons.party,
+      AppIcons.friends,
+      AppIcons.profile,
+    ])
+        List<Icon> icons,
     required int index,
-    required PageController controller,
-  }) : super(
-          icons: [
-            AppIcons.archive,
-            AppIcons.search,
-            AppIcons.add,
-            AppIcons.friends,
-            AppIcons.profile,
-          ],
-          index: index,
-          pageController: controller,
-        );
-}
-
-class OtherScreenActive extends NavbarState {
-  OtherScreenActive({
-    required int index,
-    required PageController controller,
-  }) : super(
-          icons: [
-            AppIcons.archive,
-            AppIcons.search,
-            AppIcons.party,
-            AppIcons.friends,
-            AppIcons.profile,
-          ],
-          index: index,
-          pageController: controller,
-        );
+    required PageController pageController,
+  }) = _Other;
 }

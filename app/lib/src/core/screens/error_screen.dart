@@ -2,6 +2,8 @@ import 'package:app/src/config/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
+import '../../config/app_router.dart';
+
 class ErrorScreen extends StatelessWidget {
   const ErrorScreen({Key? key}) : super(key: key);
 
@@ -16,7 +18,7 @@ class ErrorScreen extends StatelessWidget {
         child: ElevatedButton(
           child: const Text("Go Home"),
           onPressed: () {
-            context.go(AppRoutes.home);
+            AppRouter.router.go(AppRoutes.root.path);
           },
         ),
       )),

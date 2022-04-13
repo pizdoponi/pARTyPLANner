@@ -1,81 +1,82 @@
-import 'package:app/src/config/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../../config/app_animations.dart';
+import '../../../config/app_router.dart';
+import '../../../config/app_routes.dart';
+import '../../resources/state_controller.dart';
+import 'navbar_event.dart';
 import 'navbar_states.dart';
 
-final navbarController = StateNotifierProvider<NavbarController, NavbarState>(
-  (ref) => NavbarController(
-    HomeScreenActive(
-      index: 2,
-      controller: PageController(initialPage: 2),
-    ),
-  ),
+final navbarControllerProvider =
+    StateNotifierProvider<NavbarController, NavbarState>(
+  (ref) {
+    return NavbarController(
+      NavbarState.home(
+        pageController: PageController(
+          initialPage: 2,
+        ),
+      ),
+    );
+  },
 );
 
-class NavbarController extends StateNotifier<NavbarState> {
+class NavbarController extends Controller<NavbarEvent, NavbarState> {
   NavbarController(NavbarState state) : super(state);
 
-  void onTap({required int index, required BuildContext context}) {
-    // get the route the user wants to navigate to
-    var route = _index2route(index);
-    // if the user clicks on the middle [home] button
-    if (route == AppRoutes.home) {
-      // it depends if they were already on home screen
-      // if they were already on home, they clicked on
-      // the plus icon to add a party
-      if (state is HomeScreenActive) {
-        // navigate them to add party screen and exit
-        context.push(AppRoutes.addParty);
-        return;
-      }
-      // otherwise the user clicked on home button from some other tab
-      else {
-        state = HomeScreenActive(
-          index: index,
-          controller: state.pageController,
-        );
-      }
-    }
-    // the user clicked on one of the side tabs
-    else {
-      state = OtherScreenActive(
-        index: index,
-        controller: state.pageController,
-      );
-    }
+  @override
+  void emitEvent(NavbarEvent event) {
+    event.when(
+      onTap: (index) {
+        _onTap(index);
+      },
+      onSwipe: (index) {
+        _onSwipe(index);
+      },
+    );
   }
 
-  void onSwipe(int index) {
-    var route = _index2route(index);
-    if (route == AppRoutes.home) {
-      state = HomeScreenActive(
-        index: index,
-        controller: state.pageController,
-      );
+  /// Event triggered when user clicks on an icon in [Navbar].
+  ///
+  /// If current state is [NavbarState.home] and user clicks on middle icon,
+  /// where [index] == 2, [AppRouter.router] pushes [AppRoutes.addParty] as active screen.
+  ///
+  /// Else change state to the specified [index]. Lastly, notify [state.pageController]
+  /// to animate to specified page.
+  void _onTap(int index) {
+    state.when(
+      home: (_icons, _index, pageController) {
+        if (index == 2) {
+          AppRouter.router.push(AppRoutes.addParty.path);
+        } else {
+          state =
+              NavbarState.other(index: index, pageController: pageController);
+        }
+      },
+      other: (_icons, _index, pageController) {
+        if (index == 2) {
+          state = NavbarState.home(pageController: pageController);
+        } else {
+          state =
+              NavbarState.other(index: index, pageController: pageController);
+        }
+      },
+    );
+
+    state.pageController.animateToPage(
+      index,
+      duration: AppAnimations.navbarScreenChangeDuration,
+      curve: AppAnimations.navbarScreenChangeCurve,
+    );
+  }
+
+  /// Event when user swipes to another page.
+  void _onSwipe(int index) {
+    if (index == 2) {
+      state = NavbarState.home(pageController: state.pageController);
     } else {
-      state = OtherScreenActive(
-        index: index,
-        controller: state.pageController,
-      );
-    }
-  }
-
-  String _index2route(int index) {
-    switch (index) {
-      case 0:
-        return AppRoutes.archive;
-      case 1:
-        return AppRoutes.search;
-      case 2:
-        return AppRoutes.home;
-      case 3:
-        return AppRoutes.friends;
-      case 4:
-        return AppRoutes.profile;
-      default:
-        return AppRoutes.error;
+      state =
+          NavbarState.other(index: index, pageController: state.pageController);
     }
   }
 }
