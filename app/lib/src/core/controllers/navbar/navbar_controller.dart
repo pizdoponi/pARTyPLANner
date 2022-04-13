@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../config/app_animations.dart';
 import '../../../config/app_router.dart';
 import '../../../config/app_routes.dart';
-import '../../resources/state_controller.dart';
+import '../../resources/controller.dart';
 import 'navbar_event.dart';
 import 'navbar_states.dart';
 
