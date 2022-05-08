@@ -79,14 +79,13 @@ class HomeScreen extends StatelessWidget {
     var didAttendingDisplay = (hostingLength > 0 ? 1 : 0);
     var attendingLength = attending.length;
     if (index < hostingLength) {
-      return PartyTile(party: hosting[index], color: Colors.pink);
+      return PartyTile(party: hosting[index]);
     } else if (hostingLength != 0 && index == hostingLength) {
       return const AnimatedNeonText(text: "Attending: ");
     } else if (index < hostingLength + didAttendingDisplay + attendingLength) {
       return PartyTile(
         party: attending[index - (hostingLength + didAttendingDisplay)],
-        color: Colors.white,
-      );
+        );
     } else if (index == hostingLength + didAttendingDisplay + attendingLength) {
       return const AnimatedNeonText(
         text: "Trending: ",
@@ -95,7 +94,7 @@ class HomeScreen extends StatelessWidget {
       return PartyTile(
           party: trending[index -
               (hostingLength + didAttendingDisplay + attendingLength + 1)],
-          color: Colors.blue);
+      );
     }
   }
 
@@ -103,99 +102,151 @@ class HomeScreen extends StatelessWidget {
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
     Party(
         name: "PARTY 3001",
         time: DateTime(2022, 5, 11, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
+    Party(
+        name: "PARTY 1000",
+        time: DateTime(2021, 5, 12, 21, 00),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
   ];
 
   final List<Party> attending = [
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
     Party(
         name: "PARTY 3001",
         time: DateTime(2022, 5, 11, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
     Party(
         name: "PARTY 1000",
         time: DateTime(2021, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
     Party(
-        name: "PARTY 1001",
-        time: DateTime(2021, 6, 1, 21, 00),
-        participants: []),
-    Party(
-        name: "PARTY 1022",
-        time: DateTime(2022, 5, 12, 11, 30),
-        participants: []),
-    Party(
-        name: "PARTY 1300",
-        time: DateTime(2032, 7, 7, 17, 15),
-        participants: []),
-    Party(
-        name: "PARTY 1111",
+        name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
+    Party(
+        name: "PARTY 3001",
+        time: DateTime(2022, 5, 11, 21, 00),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
     Party(
         name: "PARTY 1000",
         time: DateTime(2021, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
+   Party(
+        name: "PARTY 3000",
+        time: DateTime(2022, 5, 12, 21, 00),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
     Party(
-        name: "PARTY 1001",
-        time: DateTime(2021, 6, 1, 21, 00),
-        participants: []),
+        name: "PARTY 3001",
+        time: DateTime(2022, 5, 11, 21, 00),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
     Party(
-        name: "PARTY 1022",
-        time: DateTime(2022, 5, 12, 11, 30),
-        participants: []),
+        name: "PARTY 1000",
+        time: DateTime(2021, 5, 12, 21, 00),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
     Party(
-        name: "PARTY 1300",
-        time: DateTime(2032, 7, 7, 17, 15),
-        participants: []),
+        name: "PARTY 3000",
+        time: DateTime(2022, 5, 12, 21, 00),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
+    Party(
+        name: "PARTY 3001",
+        time: DateTime(2022, 5, 11, 21, 00),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
+    Party(
+        name: "PARTY 1000",
+        time: DateTime(2021, 5, 12, 21, 00),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
   ];
   final List<Party> trending = [
     Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: []),
-    Party(
-        name: "PARTY 1001",
-        time: DateTime(2021, 6, 1, 21, 00),
-        participants: []),
-    Party(
-        name: "PARTY 1022",
-        time: DateTime(2022, 5, 12, 11, 30),
-        participants: []),
-    Party(
-        name: "PARTY 1300",
-        time: DateTime(2032, 7, 7, 17, 15),
-        participants: []),
-    Party(
-        name: "PARTY 1111",
+        name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
+    Party(
+        name: "PARTY 3001",
+        time: DateTime(2022, 5, 11, 21, 00),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
     Party(
         name: "PARTY 1000",
         time: DateTime(2021, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
     Party(
-        name: "PARTY 1001",
-        time: DateTime(2021, 6, 1, 21, 00),
-        participants: []),
-    Party(
-        name: "PARTY 1022",
-        time: DateTime(2022, 5, 12, 11, 30),
-        participants: []),
-    Party(
-        name: "PARTY 1300",
-        time: DateTime(2032, 7, 7, 17, 15),
-        participants: []),
-    Party(
-        name: "PARTY 1111",
+        name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: []),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
+    Party(
+        name: "PARTY 3001",
+        time: DateTime(2022, 5, 11, 21, 00),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
+    Party(
+        name: "PARTY 1000",
+        time: DateTime(2021, 5, 12, 21, 00),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
+   Party(
+        name: "PARTY 3000",
+        time: DateTime(2022, 5, 12, 21, 00),
+        participants: [],
+        location: "Ljubljana",
+        theme: "Clubbing"),
+    Party(
+        name: "PARTY 3001",
+        time: DateTime(2022, 5, 11, 21, 00),
+        participants: [],
+        location: "Maribor",
+        theme: "Birthday"),
+    Party(
+        name: "PARTY 1000",
+        time: DateTime(2021, 5, 12, 21, 00),
+        participants: [],
+        location: "Celje",
+        theme: "Cocktail Party"),
   ];
 }
