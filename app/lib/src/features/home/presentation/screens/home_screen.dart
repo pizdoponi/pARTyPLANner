@@ -103,9 +103,7 @@ class HomeScreen extends ConsumerWidget {
       );
     } else if (index == hostingLength + didAttendingDisplay + attendingLength) {
       return Container(
-          color: AppColors.background,
-          height: _textBoxHeight,
-          child: NeonSign(text: AppLang.lang.trending));
+          height: _textBoxHeight, child: NeonSign(text: AppLang.lang.trending));
     } else {
       return PartyTile(
         party: trending[index -
