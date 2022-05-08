@@ -25,6 +25,7 @@ dependencies:
   hooks_riverpod: ^1.0.3
   local_auth: ^1.1.11
   mockito: ^5.1.0
+  glassmorphism:
 
 dev_dependencies:
   flutter_lints: ^1.0.0
