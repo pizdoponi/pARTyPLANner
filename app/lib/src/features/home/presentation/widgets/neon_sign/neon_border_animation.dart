@@ -70,9 +70,9 @@ class _NeonBorderState extends State<NeonBorderAnimation>
       opacity: _borderAnimation,
       child: CustomPaint(
         painter: NeonBorderPainter(
-          rectHeight: widget.rectHeight,
-          rectWidth: widget.rectWidth,
-        ),
+            rectHeight: widget.rectHeight,
+            rectWidth: widget.rectWidth,
+            width: MediaQuery.of(context).size.width),
       ),
     );
   }

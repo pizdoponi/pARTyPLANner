@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 
 class NeonBorderPainter extends CustomPainter {
-  NeonBorderPainter({
-    required this.rectWidth,
-    required this.rectHeight,
-  });
+  NeonBorderPainter(
+      {required this.rectWidth, required this.rectHeight, required this.width});
   final double rectWidth;
   final double rectHeight;
+  final double width;
 
   @override
   void paint(Canvas canvas, Size size) {
@@ -49,6 +48,21 @@ class NeonBorderPainter extends CustomPainter {
     canvas.drawRRect(roundedRectangle, stroke);
     //tale more biti vedno zadaj, če ne ga stroke prekrije!
     canvas.drawRRect(roundedRectangle, paint);
+
+//! tole je pripravljena crta cez celo sirino ekrana skoazi znak
+//! se mi zdi da je lepo in nujno potrebno za siroke zaslone
+//! bi blo pa treba da je do roba => cel seznam mora biti tako sirok kot je zaslon in pol margin na tile
+//! plus treba jo je prekint da ne seka znaka
+//! lahko pa samo resimo velikost znaka drugace. zdej se ta crta 2x narise ker se ta class klice za vsak border posebi
+    // final Rect line =
+    // Rect.fromCenter(center: _center, width: width, height: 0.5);
+
+    // for (var shadow in shadows) {
+    //   canvas.drawRect(line, shadow);
+    // }
+    // canvas.drawRect(line, stroke);
+    //tale more biti vedno zadaj, če ne ga stroke prekrije!
+    // canvas.drawRect(line, paint);
   }
 
 //to je neka flunkcija k blura shadow

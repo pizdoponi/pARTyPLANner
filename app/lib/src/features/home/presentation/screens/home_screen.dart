@@ -7,6 +7,7 @@ import 'package:app/src/features/home/domain/usecases/get_attending_parties.dart
 import 'package:app/src/features/home/presentation/widgets/neon_sign/neon_sign.dart';
 import 'package:app/src/features/home/presentation/widgets/background.dart';
 import 'package:app/src/features/home/presentation/widgets/party_tile.dart';
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -67,18 +68,21 @@ class HomeScreen extends ConsumerWidget {
             )
           ]),
         ),
-        Container(
-          margin: const EdgeInsets.all(
-              20), //popravi, ko veš kako je naredu krajšek in kolk so velki partytiles
-          height: MediaQuery.of(context).size.height, //
-          width: MediaQuery.of(context).size.width, //
-          child: ListView.builder(
-            itemCount: hosting.length +
-                (hosting.isNotEmpty ? 1 : 0) +
-                attending.length +
-                1 +
-                trending.length,
-            itemBuilder: (context, index) => createTile(context, index),
+        Center(
+          child: SizedBox(
+            // margin: const EdgeInsets.all(
+            //     20), //popravi, ko veš kako je naredu krajšek in kolk so velki partytiles
+            height: MediaQuery.of(context).size.height, //
+            width: MediaQuery.of(context).size.width * 0.85, //
+            child: ListView.builder(
+              itemCount: hosting.length +
+                  (hosting.isNotEmpty ? 1 : 0) +
+                  attending.length +
+                  1 +
+                  trending.length +
+                  1,
+              itemBuilder: (context, index) => createTile(context, index),
+            ),
           ),
         )
       ],
@@ -89,11 +93,12 @@ class HomeScreen extends ConsumerWidget {
     var hostingLength = hosting.length;
     var didAttendingDisplay = (hostingLength > 0 ? 1 : 0);
     var attendingLength = attending.length;
+    var trendingLength = trending.length;
 
     if (index < hostingLength) {
       return PartyTile(party: hosting[index]);
     } else if (hostingLength != 0 && index == hostingLength) {
-      return Container(
+      return SizedBox(
         height: _textBoxHeight,
         child: NeonSign(text: AppLang.lang.attending),
       );
@@ -102,8 +107,18 @@ class HomeScreen extends ConsumerWidget {
         party: attending[index - (hostingLength + didAttendingDisplay)],
       );
     } else if (index == hostingLength + didAttendingDisplay + attendingLength) {
-      return Container(
+      return SizedBox(
           height: _textBoxHeight, child: NeonSign(text: AppLang.lang.trending));
+    } else if (index ==
+        hostingLength +
+            didAttendingDisplay +
+            attendingLength +
+            1 +
+            trendingLength) {
+      return const SizedBox(
+        height:
+            75, //tuki bi blo mogoče fajn vzet CurvedNavigationBar.height, ampak je private. --> se pogleda v testih če je enako?
+      );
     } else {
       return PartyTile(
         party: trending[index -
@@ -119,18 +134,18 @@ class HomeScreen extends ConsumerWidget {
         participants: [],
         location: "Ljubljana",
         theme: "Clubbing"),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
-        location: "Maribor",
-        theme: "Birthday"),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
-        location: "Celje",
-        theme: "Cocktail Party"),
+    // Party(
+    //     name: "PARTY 3001",
+    //     time: DateTime(2022, 5, 11, 21, 00),
+    //     participants: [],
+    //     location: "Maribor",
+    //     theme: "Birthday"),
+    // Party(
+    //     name: "PARTY 1000",
+    //     time: DateTime(2021, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Celje",
+    //     theme: "Cocktail Party"),
   ];
 
   // final List<Party> hosting = [];
@@ -148,66 +163,66 @@ class HomeScreen extends ConsumerWidget {
         participants: [],
         location: "Maribor",
         theme: "Birthday"),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
-        location: "Celje",
-        theme: "Cocktail Party"),
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
-        location: "Ljubljana",
-        theme: "Clubbing"),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
-        location: "Maribor",
-        theme: "Birthday"),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
-        location: "Celje",
-        theme: "Cocktail Party"),
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
-        location: "Ljubljana",
-        theme: "Clubbing"),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
-        location: "Maribor",
-        theme: "Birthday"),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
-        location: "Celje",
-        theme: "Cocktail Party"),
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
-        location: "Ljubljana",
-        theme: "Clubbing"),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
-        location: "Maribor",
-        theme: "Birthday"),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
-        location: "Celje",
-        theme: "Cocktail Party"),
+    // Party(
+    //     name: "PARTY 1000",
+    //     time: DateTime(2021, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Celje",
+    //     theme: "Cocktail Party"),
+    // Party(
+    //     name: "PARTY 3000",
+    //     time: DateTime(2022, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Ljubljana",
+    //     theme: "Clubbing"),
+    // Party(
+    //     name: "PARTY 3001",
+    //     time: DateTime(2022, 5, 11, 21, 00),
+    //     participants: [],
+    //     location: "Maribor",
+    //     theme: "Birthday"),
+    // Party(
+    //     name: "PARTY 1000",
+    //     time: DateTime(2021, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Celje",
+    //     theme: "Cocktail Party"),
+    // Party(
+    //     name: "PARTY 3000",
+    //     time: DateTime(2022, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Ljubljana",
+    //     theme: "Clubbing"),
+    // Party(
+    //     name: "PARTY 3001",
+    //     time: DateTime(2022, 5, 11, 21, 00),
+    //     participants: [],
+    //     location: "Maribor",
+    //     theme: "Birthday"),
+    // Party(
+    //     name: "PARTY 1000",
+    //     time: DateTime(2021, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Celje",
+    //     theme: "Cocktail Party"),
+    // Party(
+    //     name: "PARTY 3000",
+    //     time: DateTime(2022, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Ljubljana",
+    //     theme: "Clubbing"),
+    // Party(
+    //     name: "PARTY 3001",
+    //     time: DateTime(2022, 5, 11, 21, 00),
+    //     participants: [],
+    //     location: "Maribor",
+    //     theme: "Birthday"),
+    // Party(
+    //     name: "PARTY 1000",
+    //     time: DateTime(2021, 5, 12, 21, 00),
+    //     participants: [],
+    //     location: "Celje",
+    //     theme: "Cocktail Party"),
   ];
   final List<Party> trending = [
     Party(

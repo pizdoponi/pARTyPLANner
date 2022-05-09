@@ -12,15 +12,17 @@ class NeonSign extends StatelessWidget {
 
   final String text;
 
-  static const double rectHeightInner = 35.0;
-  static const double rectHeightOuter = 45.0;
-  static const double rectWidthInner = 230.0;
-  static const double rectWidthOuter = 240.0;
+  // static const double rectHeightInner = 35.0;
+  // static const double rectHeightOuter = 45.0;
+  // static const double rectWidthInner = 230.0;
+  // static const double rectWidthOuter = 240.0;
 
   @override
   Widget build(BuildContext context) {
-    // var attendingLoaded = ref.read(attendingHasLoadedProvider);
-    // var trendingLoaded = ref.read(trendingHasLoadedProvider);
+    var rectHeightInner = 35.0;
+    var rectHeightOuter = 45.0;
+    var rectWidthInner = 230.0;
+    var rectWidthOuter = 240.0;
     var attendingHasLoaded = NeonSignStatus.attendingHasLoaded;
     var trendingHasLoaded = NeonSignStatus.trendingHasLoaded;
     late bool _shouldAnimate;
@@ -40,14 +42,14 @@ class NeonSign extends StatelessWidget {
     if (_shouldAnimate) {
       return Stack(
         children: [
-          const Center(
+          Center(
             child: NeonBorderAnimation(
               rectHeight: rectHeightInner,
               rectWidth: rectWidthInner,
               isOuter: false,
             ),
           ),
-          const Center(
+          Center(
             child: NeonBorderAnimation(
               rectHeight: rectHeightOuter,
               rectWidth: rectWidthOuter,
@@ -62,17 +64,17 @@ class NeonSign extends StatelessWidget {
         Center(
           child: CustomPaint(
             painter: NeonBorderPainter(
-              rectHeight: rectHeightInner,
-              rectWidth: rectWidthInner,
-            ),
+                rectHeight: rectHeightInner,
+                rectWidth: rectWidthInner,
+                width: MediaQuery.of(context).size.width),
           ),
         ),
         Center(
           child: CustomPaint(
             painter: NeonBorderPainter(
-              rectHeight: rectHeightOuter,
-              rectWidth: rectWidthOuter,
-            ),
+                rectHeight: rectHeightOuter,
+                rectWidth: rectWidthOuter,
+                width: MediaQuery.of(context).size.width),
           ),
         ),
         Center(child: NeonText(text: text)),
