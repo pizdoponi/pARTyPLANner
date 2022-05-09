@@ -5,4 +5,6 @@ abstract class Lang {
   String get homeScreen;
   String get profileScreen;
   String get searchScreen;
+  String get trending;
+  String get attending;
 }

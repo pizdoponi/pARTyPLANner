@@ -18,4 +18,10 @@ class English extends Lang {
 
   @override
   String get searchScreen => "Search Screen";
+
+  @override
+  String get trending => "Trending";
+
+  @override
+  String get attending => "Attending";
 }

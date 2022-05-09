@@ -18,4 +18,10 @@ class Slovenian extends Lang {
 
   @override
   String get searchScreen => "Iskalni zaslon";
+
+  @override
+  String get trending => "Popularno";
+
+  @override
+  String get attending => "Izbrano";
 }

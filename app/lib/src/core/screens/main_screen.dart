@@ -42,7 +42,7 @@ class MainScreen extends ConsumerWidget {
                   .emitEvent(NavbarEvent.onSwipe(index));
             },
             // the children are the screens (tabs)
-            children: const [
+            children: [
               ArchiveScreen(),
               SearchScreen(),
               HomeScreen(),
