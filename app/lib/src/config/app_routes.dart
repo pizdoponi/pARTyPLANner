@@ -1,7 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../core/screens/main_screen.dart';
-import '../features/add_party/presentation/screens/add_party_screen.dart';
+import '../features/create_party/presentation/screens/create_party_screen.dart';
 
 class AppRoutes {
   static final GoRoute root = GoRoute(
@@ -10,10 +10,12 @@ class AppRoutes {
     builder: (context, state) => const MainScreen(),
   );
 
-  static final GoRoute addParty = GoRoute(
-    path: "/addParty",
-    name: "addParty",
-    builder: (context, state) => const AddPartyScreen(),
+  static final GoRoute createParty = GoRoute(
+    path: "/createParty",
+    name: "createParty",
+    builder: (context, state) => CreatePartyScreen(
+      pageIndex: 1,
+    ),
   );
 
   // static const String home = "/home";

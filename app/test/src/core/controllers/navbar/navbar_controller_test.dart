@@ -43,7 +43,7 @@ void main() {
         // * Act
         sut.emitEvent(NavbarEvent.onTap(index));
         // * Assert
-        expect(router.location, AppRoutes.addParty.path);
+        expect(router.location, AppRoutes.createParty.path);
       });
 
       test('Screen should change to index when a navbar button is pressed', () {

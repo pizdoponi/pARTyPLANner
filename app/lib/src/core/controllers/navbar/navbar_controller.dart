@@ -47,7 +47,7 @@ class NavbarController extends Controller<NavbarEvent, NavbarState> {
     state.when(
       home: (_icons, _index, pageController) {
         if (index == 2) {
-          AppRouter.router.push(AppRoutes.addParty.path);
+          AppRouter.router.push(AppRoutes.createParty.path);
         } else {
           state =
               NavbarState.other(index: index, pageController: pageController);

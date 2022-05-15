@@ -7,7 +7,7 @@ class AppRouter {
     initialLocation: AppRoutes.root.path,
     routes: [
       AppRoutes.root,
-      AppRoutes.addParty,
+      AppRoutes.createParty,
     ],
     errorBuilder: (context, state) => const ErrorScreen(),
   );
