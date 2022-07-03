@@ -1,4 +1,4 @@
-import 'package:app/src/features/home/presentation/widgets/neon_sign/neon_text.dart';
+import 'neon_text.dart';
 import 'package:flutter/material.dart';
 
 class NeonTextAnimation extends StatefulWidget {

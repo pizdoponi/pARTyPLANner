@@ -43,11 +43,11 @@ class MainScreen extends ConsumerWidget {
             },
             // the children are the screens (tabs)
             children: [
-              ArchiveScreen(),
-              SearchScreen(),
+              const ArchiveScreen(),
+              const SearchScreen(),
               HomeScreen(),
-              FriendsScreen(),
-              ProfileScreen(),
+              const FriendsScreen(),
+              const ProfileScreen(),
             ],
           ),
           Container(

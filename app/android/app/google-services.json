@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "428824671514",
+    "project_id": "komma-debb4",
+    "storage_bucket": "komma-debb4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:428824671514:android:f08966a2817bfc788fe8a3",
+        "android_client_info": {
+          "package_name": "com.example.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "428824671514-at8voinfhuvl7vg4kimrk9gv9315j1eh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCYg-X9NwKZUYtH3MaelZ_acxgSevAZ3Xc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "428824671514-at8voinfhuvl7vg4kimrk9gv9315j1eh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

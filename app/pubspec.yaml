@@ -11,25 +11,29 @@ environment:
 dependencies:
   animations: ^2.0.2
   badges: ^2.0.2
+  cloud_firestore: ^3.1.15
   connectivity_plus: ^2.2.1
   cupertino_icons: ^1.0.2
   curved_navigation_bar: ^1.0.3
   equatable: ^2.0.3
+  firebase_analytics: ^9.1.8
+  firebase_auth: ^3.3.18
+  firebase_core: ^1.17.0
   flutter:
     sdk: flutter
   flutter_hooks: ^0.18.2+1
   flutter_native_splash: ^2.1.1
   freezed_annotation: ^1.1.0
   geolocator: ^8.2.0
+  glassmorphism: null
   go_router: ^3.0.4
   google_fonts: ^2.3.1
   hooks_riverpod: ^1.0.3
   json_annotation: ^4.4.0
   local_auth: ^1.1.11
+  mockito: ^5.1.0
   mocktail: ^0.3.0
   uuid: ^3.0.6
-  mockito: ^5.1.0
-  glassmorphism:
 
 dev_dependencies:
   build_runner: ^2.1.8
@@ -38,7 +42,6 @@ dev_dependencies:
     sdk: flutter
   freezed: ">=1.0.0 <1.1.1"
   json_serializable: ^6.1.5
-  # very_good_analysis: ^2.4.0
 
 flutter:
   uses-material-design: true
@@ -76,12 +79,9 @@ flutter:
     #      - asset: lib/src/config/font_families/Pinyon_Script/PinyonScript-Regular.ttf
     #  - family: Neon
     #    fonts:
-        #  - asset: lib\src\config\font_families\Neon\neon.ttf
-     - family: NeonLights
-       fonts:
-         - asset: lib\src\config\font_families\neonlights.ttf
-
-
-
+    #  - asset: lib\src\config\font_families\Neon\neon.ttf
+    - family: NeonLights
+      fonts:
+        - asset: lib\src\config\font_families\neonlights.ttf
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

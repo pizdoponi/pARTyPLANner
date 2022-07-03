@@ -1,4 +1,4 @@
-import 'package:app/src/core/resources/data_state.dart';
+import '../../../../core/resources/data_state.dart';
 
 import '../../../../core/entities/party.dart';
 

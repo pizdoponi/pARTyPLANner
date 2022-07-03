@@ -3,12 +3,11 @@ import 'lang/lang.dart';
 import 'lang/slovenian.dart';
 
 class AppLang {
-  static final Lang _eng = English();
-  static final Lang _slo = Slovenian();
+  static final Lang eng = English();
+  static final Lang slo = Slovenian();
 
   // TODO: get the chosen lang from user profile (preffered settings)
-  static final Lang _chosenLang = _eng;
+  static final Lang _chosenLang = eng;
 
   static Lang get lang => _chosenLang;
-  // static List<Lang> get availableLangs => [_eng, _slo];
 }

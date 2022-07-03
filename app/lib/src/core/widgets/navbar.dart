@@ -1,9 +1,9 @@
-import '../../config/app_animations.dart';
-import '../../config/app_colors.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
+import '../../config/app_animations.dart';
+import '../../config/app_colors.dart';
 import '../controllers/navbar/navbar_controller.dart';
 import '../controllers/navbar/navbar_event.dart';
 

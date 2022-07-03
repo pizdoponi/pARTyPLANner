@@ -1,5 +1,5 @@
-import 'package:app/src/config/app_lang.dart';
-import 'package:app/src/features/home/presentation/widgets/neon_sign/neon_sign_status.dart';
+import '../../../../../config/app_lang.dart';
+import 'neon_sign_status.dart';
 import 'package:flutter/cupertino.dart';
 
 import 'neon_border_animation.dart';

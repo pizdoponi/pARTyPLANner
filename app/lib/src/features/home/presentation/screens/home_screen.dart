@@ -1,13 +1,9 @@
-import 'package:app/src/config/app_colors.dart';
-import 'package:app/src/config/app_lang.dart';
-import 'package:app/src/core/entities/party.dart';
-import 'package:app/src/core/resources/data_state.dart';
-import 'package:app/src/features/home/data/repositories/party_repository_impl.dart';
-import 'package:app/src/features/home/domain/usecases/get_attending_parties.dart';
-import 'package:app/src/features/home/presentation/widgets/neon_sign/neon_sign.dart';
-import 'package:app/src/features/home/presentation/widgets/background.dart';
-import 'package:app/src/features/home/presentation/widgets/party_tile.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import '../../../../config/app_lang.dart';
+import '../../../../core/entities/party.dart';
+import '../../../../core/entities/party_theme.dart';
+import '../widgets/neon_sign/neon_sign.dart';
+import '../widgets/background_gradient_page.dart';
+import '../widgets/party_tile.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
@@ -27,23 +23,25 @@ class HomeScreen extends ConsumerWidget {
     return Stack(
       children: <Widget>[
         Container(
-          child: backgroundGradientPage(),
+          child: const BackgroundGradientPage(),
         ),
         Container(
           margin: const EdgeInsets.only(top: 100),
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.only(
+              borderRadius: const BorderRadius.only(
                   bottomRight: Radius.circular(300),
                   topRight: Radius.circular(300)),
               shape: BoxShape.rectangle,
               boxShadow: [
                 BoxShadow(
-                  color: Color.fromARGB(255, 40, 89, 182).withOpacity(0.5),
+                  color:
+                      const Color.fromARGB(255, 40, 89, 182).withOpacity(0.5),
                   spreadRadius: 70,
                   blurRadius: 100,
                 ),
                 BoxShadow(
-                  color: Color.fromARGB(255, 11, 29, 195).withOpacity(0.3),
+                  color:
+                      const Color.fromARGB(255, 11, 29, 195).withOpacity(0.3),
                   spreadRadius: -4,
                   blurRadius: 100,
                 )
@@ -57,12 +55,12 @@ class HomeScreen extends ConsumerWidget {
           margin: const EdgeInsets.only(top: 380, left: 129),
           decoration: BoxDecoration(shape: BoxShape.circle, boxShadow: [
             BoxShadow(
-              color: Color.fromARGB(199, 114, 55, 153).withOpacity(0.3),
+              color: const Color.fromARGB(199, 114, 55, 153).withOpacity(0.3),
               spreadRadius: 70,
               blurRadius: 1000,
             ),
             BoxShadow(
-              color: Color.fromARGB(201, 125, 26, 190).withOpacity(0.2),
+              color: const Color.fromARGB(201, 125, 26, 190).withOpacity(0.2),
               spreadRadius: -1,
               blurRadius: 100,
             )
@@ -131,9 +129,9 @@ class HomeScreen extends ConsumerWidget {
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Ljubljana",
-        theme: "Clubbing"),
+        theme: PartyTheme(type: "Clubbing")),
     // Party(
     //     name: "PARTY 3001",
     //     time: DateTime(2022, 5, 11, 21, 00),
@@ -154,15 +152,15 @@ class HomeScreen extends ConsumerWidget {
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Ljubljana",
-        theme: "Clubbing"),
+        theme: PartyTheme(type: "Clubbing")),
     Party(
         name: "PARTY 3001",
         time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Maribor",
-        theme: "Birthday"),
+        theme: PartyTheme(type: "Birthday")),
     // Party(
     //     name: "PARTY 1000",
     //     time: DateTime(2021, 5, 12, 21, 00),
@@ -228,56 +226,56 @@ class HomeScreen extends ConsumerWidget {
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Ljubljana",
-        theme: "Clubbing"),
+        theme: PartyTheme(type: "Clubbing")),
     Party(
         name: "PARTY 3001",
         time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Maribor",
-        theme: "Birthday"),
+        theme: PartyTheme(type: "Birthday")),
     Party(
         name: "PARTY 1000",
         time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Celje",
-        theme: "Cocktail Party"),
+        theme: PartyTheme(type: "Cocktail Party")),
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Ljubljana",
-        theme: "Clubbing"),
+        theme: PartyTheme(type: "Clubbing")),
     Party(
         name: "PARTY 3001",
         time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Maribor",
-        theme: "Birthday"),
+        theme: PartyTheme(type: "Birthday")),
     Party(
         name: "PARTY 1000",
         time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Celje",
-        theme: "Cocktail Party"),
+        theme: PartyTheme(type: "Cocktail Party")),
     Party(
         name: "PARTY 3000",
         time: DateTime(2022, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Ljubljana",
-        theme: "Clubbing"),
+        theme: PartyTheme(type: "Clubbing")),
     Party(
         name: "PARTY 3001",
         time: DateTime(2022, 5, 11, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Maribor",
-        theme: "Birthday"),
+        theme: PartyTheme(type: "Birthday")),
     Party(
         name: "PARTY 1000",
         time: DateTime(2021, 5, 12, 21, 00),
-        participants: [],
+        participants: const [],
         location: "Celje",
-        theme: "Cocktail Party"),
+        theme: PartyTheme(type: "Cocktail Party")),
   ];
 }

@@ -1,5 +1,6 @@
-import 'package:app/src/features/home/presentation/widgets/neon_sign/neon_border_painter.dart';
 import 'package:flutter/cupertino.dart';
+
+import 'neon_border_painter.dart';
 
 class NeonBorderAnimation extends StatefulWidget {
   const NeonBorderAnimation(

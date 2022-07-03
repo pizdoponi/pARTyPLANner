@@ -1,4 +1,4 @@
-import 'package:app/src/config/app_colors.dart';
+import '../../../../../config/app_colors.dart';
 import 'package:flutter/material.dart';
 
 class NeonText extends StatelessWidget {
