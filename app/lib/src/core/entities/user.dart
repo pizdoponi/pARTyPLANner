@@ -1,7 +1,6 @@
 import 'package:equatable/equatable.dart';
 
 import 'achievements/achievement.dart';
-import 'party.dart';
 import 'social_media/social_media_account.dart';
 
 class User extends Equatable {
@@ -9,7 +8,6 @@ class User extends Equatable {
   late final String username;
   late final int? age;
   late final List<User> friends;
-  late final List<Party> attendedParties;
   late final List<Achievement> achievements;
   late final List<SocialMediaAccount> socialMediaAccounts;
   late final int xp;
@@ -20,7 +18,6 @@ class User extends Equatable {
     String? username,
     int? age,
     List<User>? friends,
-    List<Party>? attendedParties,
     List<Achievement>? achievements,
     List<SocialMediaAccount>? socialMediaAccounts,
     int? xp,
@@ -29,7 +26,6 @@ class User extends Equatable {
     if (username != null) this.username = username;
     if (age != null) this.age = age;
     if (friends != null) this.friends = friends;
-    if (attendedParties != null) this.attendedParties = attendedParties;
     if (achievements != null) this.achievements = achievements;
     if (socialMediaAccounts != null)
       this.socialMediaAccounts = socialMediaAccounts;
@@ -44,7 +40,6 @@ class User extends Equatable {
     String? username,
     int? age,
     List<User>? friends,
-    List<Party>? attendedParties,
     List<Achievement>? achievements,
     List<SocialMediaAccount>? socialMediaAccounts,
     int? xp,
@@ -54,7 +49,6 @@ class User extends Equatable {
       username: username ?? this.username,
       age: age ?? this.age,
       friends: friends ?? this.friends,
-      attendedParties: attendedParties ?? this.attendedParties,
       achievements: achievements ?? this.achievements,
       socialMediaAccounts: socialMediaAccounts ?? this.socialMediaAccounts,
       xp: xp ?? this.xp,

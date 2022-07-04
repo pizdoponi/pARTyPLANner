@@ -126,12 +126,12 @@ class HomeScreen extends ConsumerWidget {
   }
 
   final List<Party> hosting = [
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: const [],
-        location: "Ljubljana",
-        theme: PartyTheme(type: "Clubbing")),
+    Party()
+      ..name = "PARTY 3000"
+      ..time = DateTime(2022, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Ljubljana"
+      ..theme = PartyTheme(type: "Clubbing"),
     // Party(
     //     name: "PARTY 3001",
     //     time: DateTime(2022, 5, 11, 21, 00),
@@ -145,137 +145,76 @@ class HomeScreen extends ConsumerWidget {
     //     location: "Celje",
     //     theme: "Cocktail Party"),
   ];
-
-  // final List<Party> hosting = [];
 
   final List<Party> attending = [
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: const [],
-        location: "Ljubljana",
-        theme: PartyTheme(type: "Clubbing")),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: const [],
-        location: "Maribor",
-        theme: PartyTheme(type: "Birthday")),
-    // Party(
-    //     name: "PARTY 1000",
-    //     time: DateTime(2021, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Celje",
-    //     theme: "Cocktail Party"),
-    // Party(
-    //     name: "PARTY 3000",
-    //     time: DateTime(2022, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Ljubljana",
-    //     theme: "Clubbing"),
-    // Party(
-    //     name: "PARTY 3001",
-    //     time: DateTime(2022, 5, 11, 21, 00),
-    //     participants: [],
-    //     location: "Maribor",
-    //     theme: "Birthday"),
-    // Party(
-    //     name: "PARTY 1000",
-    //     time: DateTime(2021, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Celje",
-    //     theme: "Cocktail Party"),
-    // Party(
-    //     name: "PARTY 3000",
-    //     time: DateTime(2022, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Ljubljana",
-    //     theme: "Clubbing"),
-    // Party(
-    //     name: "PARTY 3001",
-    //     time: DateTime(2022, 5, 11, 21, 00),
-    //     participants: [],
-    //     location: "Maribor",
-    //     theme: "Birthday"),
-    // Party(
-    //     name: "PARTY 1000",
-    //     time: DateTime(2021, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Celje",
-    //     theme: "Cocktail Party"),
-    // Party(
-    //     name: "PARTY 3000",
-    //     time: DateTime(2022, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Ljubljana",
-    //     theme: "Clubbing"),
-    // Party(
-    //     name: "PARTY 3001",
-    //     time: DateTime(2022, 5, 11, 21, 00),
-    //     participants: [],
-    //     location: "Maribor",
-    //     theme: "Birthday"),
-    // Party(
-    //     name: "PARTY 1000",
-    //     time: DateTime(2021, 5, 12, 21, 00),
-    //     participants: [],
-    //     location: "Celje",
-    //     theme: "Cocktail Party"),
+    Party()
+      ..name = "PARTY 3000"
+      ..time = DateTime(2022, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Ljubljana"
+      ..theme = PartyTheme(type: "Clubbing"),
+    Party()
+      ..name = "PARTY 3001"
+      ..time = DateTime(2022, 5, 11, 21, 00)
+      ..participants = const []
+      ..location = "Maribor"
+      ..theme = PartyTheme(type: "Birthday")
   ];
+
   final List<Party> trending = [
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: const [],
-        location: "Ljubljana",
-        theme: PartyTheme(type: "Clubbing")),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: const [],
-        location: "Maribor",
-        theme: PartyTheme(type: "Birthday")),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: const [],
-        location: "Celje",
-        theme: PartyTheme(type: "Cocktail Party")),
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: const [],
-        location: "Ljubljana",
-        theme: PartyTheme(type: "Clubbing")),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: const [],
-        location: "Maribor",
-        theme: PartyTheme(type: "Birthday")),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: const [],
-        location: "Celje",
-        theme: PartyTheme(type: "Cocktail Party")),
-    Party(
-        name: "PARTY 3000",
-        time: DateTime(2022, 5, 12, 21, 00),
-        participants: const [],
-        location: "Ljubljana",
-        theme: PartyTheme(type: "Clubbing")),
-    Party(
-        name: "PARTY 3001",
-        time: DateTime(2022, 5, 11, 21, 00),
-        participants: const [],
-        location: "Maribor",
-        theme: PartyTheme(type: "Birthday")),
-    Party(
-        name: "PARTY 1000",
-        time: DateTime(2021, 5, 12, 21, 00),
-        participants: const [],
-        location: "Celje",
-        theme: PartyTheme(type: "Cocktail Party")),
+    Party()
+      ..name = "PARTY 3000"
+      ..time = DateTime(2022, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Ljubljana"
+      ..theme = PartyTheme(type: "Clubbing"),
+    Party()
+      ..name = "PARTY 3001"
+      ..time = DateTime(2022, 5, 11, 21, 00)
+      ..participants = const []
+      ..location = "Maribor"
+      ..theme = PartyTheme(type: "Birthday"),
+    Party()
+      ..name = "PARTY 1000"
+      ..time = DateTime(2021, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Celje"
+      ..theme = PartyTheme(type: "Cocktail Party"),
+    Party()
+      ..name = "PARTY 3000"
+      ..time = DateTime(2022, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Ljubljana"
+      ..theme = PartyTheme(type: "Clubbing"),
+    Party()
+      ..name = "PARTY 3001"
+      ..time = DateTime(2022, 5, 11, 21, 00)
+      ..participants = const []
+      ..location = "Maribor"
+      ..theme = PartyTheme(type: "Birthday"),
+    Party()
+      ..name = "PARTY 1000"
+      ..time = DateTime(2021, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Celje"
+      ..theme = PartyTheme(type: "Cocktail Party"),
+    Party()
+      ..name = "PARTY 3000"
+      ..time = DateTime(2022, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Ljubljana"
+      ..theme = PartyTheme(type: "Clubbing"),
+    Party()
+      ..name = "PARTY 3001"
+      ..time = DateTime(2022, 5, 11, 21, 00)
+      ..participants = const []
+      ..location = "Maribor"
+      ..theme = PartyTheme(type: "Birthday"),
+    Party()
+      ..name = "PARTY 1000"
+      ..time = DateTime(2021, 5, 12, 21, 00)
+      ..participants = const []
+      ..location = "Celje"
+      ..theme = PartyTheme(type: "Cocktail Party")
   ];
 }

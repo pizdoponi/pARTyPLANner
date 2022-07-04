@@ -10,7 +10,7 @@ class GetTrendingParties implements UseCase<DataState<List<Party>>, int?> {
 
   GetTrendingParties(this._partyRepository);
   @override
-  Future<DataState<List<Party>>> call({int? params}) {
+  Future<DataState<List<Party>>> call(int? params) {
     return _partyRepository.getTrendingParties(params ?? _defaultPartyRequests);
   }
 }

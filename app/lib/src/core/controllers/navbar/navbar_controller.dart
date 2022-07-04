@@ -4,7 +4,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../config/app_animations.dart';
 import '../../../config/app_router.dart';
 import '../../../config/app_routes.dart';
-import '../../resources/controller.dart';
+import '../../resources/event_state_controller.dart';
 import 'navbar_event.dart';
 import 'navbar_states.dart';
 
@@ -21,7 +21,7 @@ final navbarControllerProvider =
   },
 );
 
-class NavbarController extends Controller<NavbarEvent, NavbarState> {
+class NavbarController extends EventStateController<NavbarEvent, NavbarState> {
   NavbarController(NavbarState state) : super(state);
 
   @override
